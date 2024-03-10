@@ -6,6 +6,7 @@ import nltk
 nltk.download('punkt')
 nltk.download('averaged_perceptron_tagger')
 nltk.download('universal_tagset')
+nltk.download('vader_lexicon')
 from nltk.tokenize import sent_tokenize, word_tokenize
 from nltk import pos_tag
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
