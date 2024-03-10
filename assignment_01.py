@@ -36,7 +36,7 @@ conn = psycopg2.connect(
     dbname="swarnali_u4o2",
     user="swarnali_u4o2_user",
     password="iuz3vabkCArmNP4Tre2p6UK1JyO8gnG6",
-    hostname=dpg-cnn1f12cn0vc738gnjcg-a.oregon-postgres.render.com,
+    hostname=dpg-cnn1f12cn0vc738gnjcg-a,
     port="5432"
 )
 cur = conn.cursor()
