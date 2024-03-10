@@ -36,7 +36,7 @@ conn = psycopg2.connect(
     dbname="new_xa7w",
     user="new_xa7w_user",
     password="3Cjjq3ccWWiigK9FBg7qpeN82veHarX0",
-    hostname="dpg-cnn26to21fec7399msv0-a",
+    host="dpg-cnn26to21fec7399msv0-a",
     port="5432"
 )
 cur = conn.cursor()
