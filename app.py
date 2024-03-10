@@ -4,6 +4,7 @@ import requests
 from bs4 import BeautifulSoup
 import nltk
 nltk.download('punkt')
+nltk.download('averaged_perceptron_tagger')
 from nltk.tokenize import sent_tokenize, word_tokenize
 from nltk import pos_tag
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
