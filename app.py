@@ -33,10 +33,10 @@ github_admin_usernames = ["Swarnali-sitare", "atmabodha"]
 
 # Connect to PostgreSQL database
 conn = psycopg2.connect(
-    dbname="table_mtm1",
-    user="table_mtm1_user",
-    password="QIZk8tRmLL0Ojh4q2yGJZK4bAETaYNOx",
-    hostname="dpg-cnn1p9821fec7399l2og-a",
+    dbname="new_xa7w",
+    user="new_xa7w_user",
+    password="3Cjjq3ccWWiigK9FBg7qpeN82veHarX0",
+    hostname="dpg-cnn26to21fec7399msv0-a",
     port="5432"
 )
 cur = conn.cursor()
@@ -165,4 +165,4 @@ def github_logout():
     return redirect(url_for('index'))
 
 if __name__ == '__main__':
-    app.run(debug=True,host = '0.0.0.0')
+    app.run(debug=True)
