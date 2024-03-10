@@ -33,10 +33,10 @@ github_admin_usernames = ["Swarnali-sitare", "atmabodha"]
 
 # Connect to PostgreSQL database
 conn = psycopg2.connect(
-    dbname="swarnali_fgi7",
-    user="swarnali_fgi7_user",
-    password="Qm72tC2yK12pyRSlDyidpmuM3KbDJBE9",
-    host=dpg-cnn0jhi1hbls739j11mg-a,
+    dbname="swarnali_u4o2",
+    user="swarnali_u4o2_user",
+    password="iuz3vabkCArmNP4Tre2p6UK1JyO8gnG6",
+    hostname=dpg-cnn1f12cn0vc738gnjcg-a.oregon-postgres.render.com,
     port="5432"
 )
 cur = conn.cursor()
