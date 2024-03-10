@@ -31,7 +31,7 @@ github = oauth.register(
 # GitHub admin usernames for verification
 github_admin_usernames = ["Swarnali-sitare", "atmabodha"]
 
-dburl="dpg-cnn0jhi1hbls739j11mg-a.oregon-postgres.render.com"
+dburl="dpg-cnn0jhi1hbls739j11mg-a.oregon-postgres.render.com/swarnali_fgi7"
 host=f"{dburl}"
 # Connect to PostgreSQL database
 conn = psycopg2.connect(
