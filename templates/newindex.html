@@ -4,33 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Get News Article</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            background-image: url('https://tse1.mm.bing.net/th?id=OIP.1KCLBPUabtWJaN9D-HudJQHaFV&pid=Api&P=0&h=180'); /* Add the path to your image */
-            background-size: cover; /* Cover the entire viewport */
-            background-position: center; /* Center the background image */
-            color: #c56007; /* Text color */
+            background-image: url('https://wallpapercave.com/wp/wp2288327.jpg '); 
+            background-size: cover; 
+            background-position: top; /* Align background image to top */
+            color: #3b1603;
+            text-align: center; /* Center align content */
+        }
+
+        .container {
+            max-width: 800px; /* Increased max-width of the container */
+            margin: 100px auto 20px; /* Increased top margin to move it further downwards */
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent background for better readability */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add shadow for better visual */
+            position: relative; /* Position container relatively */
         }
 
         .btn {
-            padding: 10px 20px;
-            background-color: #ae4c06;
+            padding: 10px 20px; /* Decreased padding of the button */
+            background-color: #2e1808;
             color: #fff;
             text-decoration: none;
             border-radius: 5px;
-            font-size: 16px;
+            font-size: 20px; /* Decreased font size of the button */
             transition: background-color 0.3s ease;
-            position: absolute;
-            top: 20px;
-            right: 20px;
+            font-family: 'Playfair Display', serif; /* Change font for button */
+            position: absolute; /* Position button absolutely */
+            top: 20px; /* Distance from top */
+            right: 20px; /* Distance from right */
         }
 
         .btn:hover {
@@ -42,6 +50,7 @@
         }
 
         h1 {
+            font-family: 'Playfair Display', serif;
             text-align: center;
             margin-bottom: 20px;
         }
@@ -53,11 +62,12 @@
 
         input[type="text"] {
             padding: 10px;
-            width: 300px;
+            width: 100%;
             border-radius: 5px;
             border: 1px solid #ccc;
-            font-size: 16px;
+            font-size: 20px; /* Set font size equal to button */
             transition: border-color 0.3s ease;
+            font-family: 'Playfair Display', serif; /* Change font for input */
         }
 
         input[type="text"]:focus {
@@ -67,28 +77,32 @@
 
         button[type="submit"] {
             padding: 10px 20px;
-            background-color: #cc9900; 
+            background-color: #3c2208; 
             color: #fff;
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            font-size: 16px;
+            font-size: 20px; /* Set font size equal to input */
             transition: background-color 0.3s ease;
+            font-family: 'Playfair Display', serif; /* Change font for button */
         }
 
         button[type="submit"]:hover {
-            background-color: #cb3309; /* Darker blue on hover */
+            background-color: #c99208; 
         }
     </style>
 </head>
 <body>
+    <img src="https://tofinoresortandmarina.com/wp-content/uploads/2017/12/2000px-The_Telegraph_logo.svg.png" alt="Image Description" style="width: 100%; max-width: 600px; margin-top: 80px;">
+
     <a href="{{ url_for('github_login') }}" class="btn btn-dark mb-2">
         <i class="fab fa-github"></i>
         <span>View History</span>
     </a>
 
-    <div>
-        <h1>Enter the URL of a NEWS Article</h1>
+    <div class="container">
+        
+        <h1>Enter the URL of a News Article</h1>
         <form id="articleForm" action="/get_article" method="post">
             <input type="text" id="articleUrl" name="url" placeholder="Enter URL" required>
             <button type="submit">Submit</button>
