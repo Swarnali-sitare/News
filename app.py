@@ -2,6 +2,7 @@ from flask import Flask, request, render_template, url_for, redirect, session
 from authlib.integrations.flask_client import OAuth
 import requests
 from bs4 import BeautifulSoup
+import string
 import nltk
 nltk.download('punkt')
 nltk.download('averaged_perceptron_tagger')
@@ -68,10 +69,10 @@ def get_article():
     heading=scrape_article(url)[1]
     num_sentences = len(sent_tokenize(article_text))
     words = word_tokenize(article_text)
-    punctuation=['.',',','/','\',';',':','!','@','#','$','-']
+    punctuation_list = list(string.punctuation)
     num_words=0
     for i in words:
-        if i not in punctuation:
+        if i not in punctuation_list:
             num_words+=1
             
     pos_tags = pos_tag(word_tokenize(article_text),tagset='universal')
