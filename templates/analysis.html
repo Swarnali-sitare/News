@@ -1,5 +1,7 @@
 <!DOCTYPE html>
+
 <html lang="en">
+    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +14,7 @@
             padding: 0;
             background-color: #f2f2f2;
             color: #333;
-            position: relative; /* Add position relative for positioning the image */
+            position: relative; 
         }
         .container {
             max-width: 800px;
@@ -21,7 +23,7 @@
             background-color: #f7f3e9;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            position: relative; /* Add position relative for positioning the image */
+            position: relative; 
         }
         h1, h2, h3 {
             color: #007bff;
@@ -40,20 +42,24 @@
             max-width: 300px;
             height: auto;
             border-radius: 8px;
-            position: absolute; /* Position the image absolutely */
-            top: 20px; /* Position from top */
-            right: 20px; /* Position from right */
+            position: absolute; 
+            top: 20px; 
+            right: 20px; 
         }
     </style>
 </head>
+    
 <body>
+    
     <div class="container">
         <h1>Article Analysis</h1>
         <p><strong>{{ url }}</strong></p>
         <br>
+        
         <h3>Sentimental Analysis</h3>
         <strong>Polarity: </strong>This is a <strong>{{ sentiment_polarity }}</strong> news.</p>
         <h2>Text Analysis</h2>
+        
         <p><strong>Number of Sentences:</strong> {{ num_sentences }}<br>
         <strong>Number of Words:</strong> {{ num_words }}<br><br>
         <strong>POS Tag Count</strong>
@@ -62,8 +68,12 @@
                 <li>{{ tag }}: {{ count }}</li>
             {% endfor %}
         </ul></p>
-        <h2>Article Text</h2>
-        <p>{{ article_text }}</p>
+        
+        <p><h2>Article Text</h2>
+        {{ article_text }}</p>
+    
     </div>
+    
 </body>
+    
 </html>
