@@ -67,7 +67,13 @@ def get_article():
     article_text = scrape_article(url)[0]
     heading=scrape_article(url)[1]
     num_sentences = len(sent_tokenize(article_text))
-    num_words = len(word_tokenize(article_text))
+    words = word_tokenize(article_text)
+    punctuation=['.',',','/','\',';',':','!','@','#','$','-']
+    num_words=0
+    for i in words:
+        if i not in punctuation:
+            num_words+=1
+            
     pos_tags = pos_tag(word_tokenize(article_text),tagset='universal')
     
     # Count the number of times each POS tag is used
