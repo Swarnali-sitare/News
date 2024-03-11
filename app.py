@@ -2,7 +2,6 @@ from flask import Flask, request, render_template, url_for, redirect, session
 from authlib.integrations.flask_client import OAuth
 import requests
 from bs4 import BeautifulSoup
-import string
 import nltk
 nltk.download('punkt')
 nltk.download('averaged_perceptron_tagger')
@@ -13,7 +12,7 @@ from nltk import pos_tag
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 import psycopg2
 
-app = Flask(__name__)
+app = Flask(_name_)
 oauth = OAuth(app)
 
 # github
@@ -68,13 +67,7 @@ def get_article():
     article_text = scrape_article(url)[0]
     heading=scrape_article(url)[1]
     num_sentences = len(sent_tokenize(article_text))
-    words = word_tokenize(article_text)
-    punctuation_list = list(string.punctuation)
-    num_words=0
-    for i in words:
-        if i not in punctuation_list:
-            num_words+=1
-            
+    num_words = len(word_tokenize(article_text))
     pos_tags = pos_tag(word_tokenize(article_text),tagset='universal')
     
     # Count the number of times each POS tag is used
@@ -175,5 +168,5 @@ def github_logout():
     # return redirect(url_for('index'))
     return redirect(url_for('index'))
 
-if __name__ == '__main__':
+if _name_ == '_main_':
     app.run(debug=True)
