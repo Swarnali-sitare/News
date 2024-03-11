@@ -12,7 +12,7 @@ from nltk import pos_tag
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 import psycopg2
 
-app = Flask(_name_)
+app = Flask(__name__)
 oauth = OAuth(app)
 
 # github
@@ -168,5 +168,5 @@ def github_logout():
     # return redirect(url_for('index'))
     return redirect(url_for('index'))
 
-if _name_ == '_main_':
+if __name__ == '__main__':
     app.run(debug=True)
