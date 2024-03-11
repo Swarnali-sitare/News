@@ -116,9 +116,19 @@ def view_analysis(article_id):
         pos_tag_counts[tag] = pos_tag_counts.get(tag, 0) + 1
     url=article[1]
     heading=scrape_article(url)[1]
+    sid = SentimentIntensityAnalyzer()
+    sentiment = sid.polarity_scores(article_text)
+    polar1 = sentiment["neg"]
+    polar2 = sentiment["pos"]
+    if polar2>polar1:
+        polarity='POSITIVE'
+    elif polar1==polar2:
+        polarity='NEUTRAL'
+    else:
+        polarity='NEGATIVE'
     
     return render_template('analysis.html', url=heading, article_text=article[2], 
-                           num_sentences=article[3], num_words=article[4], pos_tag_counts=pos_tag_counts)
+                           num_sentences=article[3], num_words=article[4], pos_tag_counts=pos_tag_counts, sentiment_polarity=polarity)
 
 def scrape_article(url):
     response = requests.get(url)
