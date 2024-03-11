@@ -117,7 +117,7 @@ def view_analysis(article_id):
     url=article[1]
     heading=scrape_article(url)[1]
     sid = SentimentIntensityAnalyzer()
-    sentiment = sid.polarity_scores(article_text)
+    sentiment = sid.polarity_scores(article[2])
     polar1 = sentiment["neg"]
     polar2 = sentiment["pos"]
     if polar2>polar1:
