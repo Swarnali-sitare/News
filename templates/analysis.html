@@ -1,7 +1,5 @@
 <!DOCTYPE html>
-
 <html lang="en">
-    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,6 +25,7 @@
         }
         h1, h2, h3 {
             color: #007bff;
+            text-decoration: underline; 
         }
         p {
             line-height: 1.6;
@@ -48,18 +47,14 @@
         }
     </style>
 </head>
-    
 <body>
-    
     <div class="container">
         <h1>Article Analysis</h1>
         <p><strong>{{ url }}</strong></p>
         <br>
-        
         <h3>Sentimental Analysis</h3>
         <strong>Polarity: </strong>This is a <strong>{{ sentiment_polarity }}</strong> news.</p>
-        <h2>Text Analysis</h2>
-        
+        <h3>Text Analysis</h3>
         <p><strong>Number of Sentences:</strong> {{ num_sentences }}<br>
         <strong>Number of Words:</strong> {{ num_words }}<br><br>
         <strong>POS Tag Count</strong>
@@ -68,12 +63,8 @@
                 <li>{{ tag }}: {{ count }}</li>
             {% endfor %}
         </ul></p>
-        
         <p><h2>Article Text</h2>
         {{ article_text }}</p>
-    
     </div>
-    
 </body>
-    
 </html>
